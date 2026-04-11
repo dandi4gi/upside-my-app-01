@@ -1,3 +1,7 @@
+import os
+import socket
+from datetime import datetime, timezone
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -11,7 +15,10 @@ class Item(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "Hello, World!"}
+    return {
+        "serverHost": socket.gethostname(),
+        "time": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 @app.get("/health")
