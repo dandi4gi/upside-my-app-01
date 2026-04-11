@@ -5,9 +5,14 @@ client = TestClient(app)
 
 
 def test_root():
+    import socket
+    from datetime import datetime
+
     res = client.get("/")
     assert res.status_code == 200
-    assert res.json() == {"message": "Hello, World!"}
+    data = res.json()
+    assert data["serverHost"] == socket.gethostname()
+    datetime.fromisoformat(data["time"])  # 유효한 ISO 포맷인지 확인
 
 
 def test_health():
