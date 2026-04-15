@@ -7,13 +7,13 @@ FastAPI 기반 DevOps 파이프라인 데모 프로젝트입니다.
 ### 의존성 설치
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 서버 실행
 
 ```bash
-uvicorn main:app --reload
+uv run uvicorn main:app --reload
 ```
 
 서버 실행 후 http://localhost:8000/docs 에서 Swagger UI 확인 가능
@@ -21,7 +21,7 @@ uvicorn main:app --reload
 ### 테스트 실행
 
 ```bash
-pytest
+uv run pytest
 ```
 
 ## Docker 빌드
