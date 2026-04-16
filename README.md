@@ -71,3 +71,18 @@ git config --local commit.gpgsign true
 # 선택
 git config --local tag.gpgSign true
 ```
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
+* https://docs.github.com/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+* https://docs.github.com/enterprise-cloud%40latest/authentication/managing-commit-signature-verification/signing-commits
+
+# Attestation 확인
+```bash
+gh auth login -h github.com
+
+gh attestation verify oci://ghcr.io/dandi4gi/devops-demo-api:latest --repo dandi4gi/upside-my-app-01
+```
+* https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions
+* https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+* https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations
+* https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility
